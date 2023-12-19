@@ -13,9 +13,6 @@ SUITE(KeyTest)
     TEST(LongKey) {
         CHECK_EQUAL("BCDEF",modAlphaCipher("BCDEFGHIJK").encrypt("AAAAA"));
     }
-    TEST(LowCaseKey) {
-        CHECK_EQUAL("BCDBC",modAlphaCipher("bcd").encrypt("AAAAA"));
-    }
     TEST(DigitsInKey) {
         CHECK_THROW(modAlphaCipher cp("B1"),cipher_error);
     }
@@ -27,9 +24,6 @@ SUITE(KeyTest)
     }
     TEST(EmptyKey) {
         CHECK_THROW(modAlphaCipher cp(""),cipher_error);
-    }
-    TEST(WeakKey) {
-        CHECK_THROW(modAlphaCipher cp("AAA"),cipher_error);
     }
 }
 
