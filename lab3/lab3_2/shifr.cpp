@@ -7,6 +7,10 @@ Shifr::Shifr(int columns) : key(columns) {
     if (key <= 0) {
         throw cipher_error("Invalid key");
     }
+    if (key >= open_text(size)) {
+	throw cipher_error("KeyLong");
+    }
+		
 }
 
 std::wstring Shifr::encrypt(const std::wstring& open_text) {
