@@ -96,7 +96,7 @@ TEST(InvalidCipherTextTest) {
 TEST(KeyLong) {
     Shifr shifr(5);
     std::wstring openText = L"Текст";
-    CHECK_THROW
+    CHECK_THROW(shifr.cipher_error)
 }
 
 }
