@@ -93,12 +93,10 @@ TEST(InvalidCipherTextTest) {
     CHECK_THROW(shifr.getValidCipherText(L"Шифр с цифрами: 123456"), cipher_error);
 }
 
-TEST(KeyLengthTest) {
+TEST(KeyLong) {
     Shifr shifr(5);
     std::wstring openText = L"Текст";
-    std::wstring cipherText = shifr.encrypt(openText);
-    std::wstring decryptedText = shifr.decrypt(cipherText);
-    CHECK_EQUAL(openText, decryptedText);
+    CHECK_THROW
 }
 
 }
